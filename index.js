@@ -45,6 +45,9 @@ async function handleRequest(request) {
     switch (url.pathname) {
       case '/':
         return template()
+      case '/increment':
+        count += 1;
+        return new Response(count);
       case '/ws':
         return websocketHandler(request)
       default:
